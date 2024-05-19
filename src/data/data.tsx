@@ -11,8 +11,9 @@ import {
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
+// import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
+// import TwitterIcon from '../components/Icon/TwitterIcon';
+import YoutubeIcon from '../components/Icon/YoutubeIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -39,6 +40,7 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
+
 
 /**
  * Page meta data
@@ -69,24 +71,23 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `My name is Milton Chow.`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        Hi I'm Milton Chow <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
+        at <strong className="text-stone-100">Société Générale</strong> as a front office automation developer helping to build internal web applications, python solutions, and automative CICD pipelines.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        In my free time time, you can catch me studying <strong className="text-stone-100">Japanese</strong>,
+        or <strong className="text-stone-100">snowboarding</strong>, or scuba diving in{' '}
+        <strong className="text-stone-100"> Japan or Taiwan</strong>.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: 'https://docs.google.com/document/d/1a6TKTO8iEPA03VYfYEwXsmwIIETobmPR98sWrw08ZGg/edit?usp=sharing',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -104,16 +105,15 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `I have around 3 years of experience being a software developer and I'm seeking for oppotorunities on being a full stack developer/ dev ops. Currently I'm most comfortable with developing software in Python`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Hong Kong', Icon: MapIcon},
+    {label: 'Age', text: '26', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'HKSAR, Taiwan', Icon: FlagIcon},
+    {label: 'Interests', text: 'snowboarding, scuba diving, coding', Icon: SparklesIcon},
+    {label: '(BSc.) Undergrad', text: 'Texas A&M University', Icon: AcademicCapIcon},
+    {label: '(MSc.) Masters', text: 'HKUST', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Société Générale', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -129,12 +129,16 @@ export const skills: SkillGroup[] = [
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
+        name: 'Cantonese',
+        level: 10,
       },
       {
-        name: 'Spanish',
-        level: 3,
+        name: 'Mandarin',
+        level: 9,
+      },
+      {
+        name: 'Japanese',
+        level: 6,
       },
     ],
   },
@@ -143,15 +147,11 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'React',
-        level: 9,
-      },
-      {
-        name: 'Typescript',
         level: 7,
       },
       {
-        name: 'GraphQL',
-        level: 6,
+        name: 'Typescript',
+        level: 5,
       },
     ],
   },
@@ -173,10 +173,10 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    name: 'Mobile development',
+    name: 'Python Development',
     skills: [
       {
-        name: 'React Native',
+        name: 'Pypi releases',
         level: 9,
       },
       {
@@ -268,15 +268,15 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'Dec 2023',
+    location: 'HKUST',
+    title: 'Masters Financial Mathematics',
+    content: <p>Focus on proofing and implmenting quantative mathematics in theory and software development respectively</p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
+    date: 'June 2020',
+    location: 'Texas A&M University',
+    title: 'Bachalor of Science in Nuclear Engineering',
     content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
   },
 ];
@@ -340,23 +340,23 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'miltonycchow@gmail.com',
+      href: 'mailto:miltonycchow@gmail.com',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Hong Kong SAR',
+      href: 'https://www.google.ca/maps/place/Hong+Kong/@22.3526409,113.9745913,11z/data=!3m1!4b1!4m6!3m5!1s0x3403e2eda332980f:0xf08ab3badbeac97c!8m2!3d22.3193039!4d114.1693611!16zL20vMDNoNjQ?entry=ttu',
     },
     {
       type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: '@miller_cyc',
+      href: 'https://www.instagram.com/miller_cyc/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'edamame852',
+      href: 'https://github.com/edamame852',
     },
   ],
 };
@@ -365,9 +365,10 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/edamame852'},
+  // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/milton-chow-8103b4171/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/miller_cyc/'},
+  // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Youtube', Icon: YoutubeIcon, href:'https://www.youtube.com/@Taking_You_To'}
 ];
