@@ -1,6 +1,9 @@
 /* eslint-env node */
 
 // https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
+
+const { i18n } = require('./next-i18next.config')
+
 const nextConfig = {
   webpack: config => {
     const oneOfRule = config.module.rules.find(rule => rule.oneOf);
@@ -20,6 +23,7 @@ const nextConfig = {
   pageExtensions: ['tsx', 'mdx', 'ts'],
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  i18n,
   reactStrictMode: true,
   swcMinify: true,
   trailingSlash: false,
@@ -36,5 +40,7 @@ const nextConfig = {
   },
   // output: 'export',
 };
+
+
 
 module.exports = nextConfig;
