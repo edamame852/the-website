@@ -16,7 +16,7 @@ import { useRouter } from 'next/router';
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
 
-// Credit for this i18n goes to https://www.youtube.com/watch?v=6xLYSyXmR3U
+// Credit for this i18n implementation goes to https://www.youtube.com/watch?v=6xLYSyXmR3U
 
 const Home: FC = memo(() => {
   const router = useRouter();
