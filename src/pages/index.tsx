@@ -20,7 +20,7 @@ const Header = dynamic(() => import('../components/Sections/Header'), {ssr: fals
 
 const Home: FC = memo(() => {
   const router = useRouter();
-  const handleChange = (locale:any) => {
+  const handleChange = (locale:string) => {
     router.push(router.pathname, router.asPath, {locale})
   }
   const {title, description} = homePageMeta;
@@ -28,15 +28,10 @@ const Home: FC = memo(() => {
   <>
       
       <Page description={description} title={title}>
-        <Header />
-        
+        <Header router={router} handleLanguageChange={handleChange}/>
         <Hero />
-        <button onClick={() => handleChange('jp')}>change to jp</button> <br/>
-        <button onClick={() => handleChange('en')}>change to en</button>
         <About />
         <Resume />
-        <Portfolio />
-        
         <Portfolio />
         <Testimonials />
         <Contact />

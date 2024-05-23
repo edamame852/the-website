@@ -1,5 +1,12 @@
 {
     "hello": "こんにちは",
+    "header": {
+        "selectLanguage": {
+            "text": "ホ",
+            "english": "ちちち",
+            "japanese": "ちちちちち"
+        }
+    },
     "section": {
         "about": "ついて"
     },
