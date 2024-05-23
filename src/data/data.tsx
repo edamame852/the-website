@@ -41,7 +41,6 @@ import {
   TimelineItem,
 } from './dataDef';
 
-
 /**
  * Page meta data
  */
@@ -55,7 +54,7 @@ export const homePageMeta: HomepageMeta = {
  */
 export const SectionId = {
   Hero: 'hero',
-  About: 'about',
+  About: "about",
   Contact: 'contact',
   Portfolio: 'portfolio',
   Resume: 'resume',

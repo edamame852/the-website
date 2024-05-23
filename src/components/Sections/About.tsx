@@ -4,9 +4,31 @@ import {FC, memo} from 'react';
 
 import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
+import { useTranslation } from 'next-i18next';
+
+import {
+  AcademicCapIcon,
+  // ArrowDownTrayIcon,
+  BuildingOffice2Icon,
+  CalendarIcon,
+  FlagIcon,
+  MapIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline';
 
 const About: FC = memo(() => {
-  const {profileImageSrc, description, aboutItems} = aboutData;
+  const {profileImageSrc} = aboutData; // refactoring description and aboutItems
+  const {t}=useTranslation();
+  const description =  t('about.description');
+  const aboutItems = [
+    {label: 'Location', text: t('about.aboutItems.location'), Icon: MapIcon},
+    {label: 'Age', text: '26', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'HKSAR, Taiwan', Icon: FlagIcon},
+    {label: 'Interests', text: 'snowboarding, scuba diving, coding', Icon: SparklesIcon},
+    {label: '(BSc.) Undergrad', text: 'Texas A&M University', Icon: AcademicCapIcon},
+    {label: '(MSc.) Masters', text: 'HKUST', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Société Générale', Icon: BuildingOffice2Icon},
+  ]
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.About}>
       <div className={classNames('grid grid-cols-1 gap-y-4', {'md:grid-cols-4': !!profileImageSrc})}>

@@ -1,3 +1,12 @@
 {
-    "hello": "Hello in English"
+    "hello": "Hello in English",
+    "section": {
+        "about": "about"
+    },
+    "about": {
+        "description": "I have around 3 years of experience being a software developer and I'm seeking for oppotorunities on being a full stack developer/ dev ops. Currently I'm most comfortable with developing software in Python",
+        "aboutItems": {
+            "location": "Hell Kong"
+        }
+    }
 }

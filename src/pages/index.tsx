@@ -11,7 +11,6 @@ import Resume from '../components/Sections/Resume';
 import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/data';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
 // eslint-disable-next-line react-memo/require-memo
@@ -20,7 +19,6 @@ const Header = dynamic(() => import('../components/Sections/Header'), {ssr: fals
 // Credit for this i18n goes to https://www.youtube.com/watch?v=6xLYSyXmR3U
 
 const Home: FC = memo(() => {
-  const {t}=useTranslation()
   const router = useRouter();
   const handleChange = (locale:any) => {
     router.push(router.pathname, router.asPath, {locale})
@@ -33,8 +31,6 @@ const Home: FC = memo(() => {
         <Header />
         
         <Hero />
-        
-        <a>{t('hello')}</a> <br/>
         <button onClick={() => handleChange('jp')}>change to jp</button> <br/>
         <button onClick={() => handleChange('en')}>change to en</button>
         <About />
