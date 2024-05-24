@@ -1,3 +1,4 @@
+import React from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Bars3BottomRightIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
@@ -76,17 +77,38 @@ const DesktopNav: FC<{
           ))}
         </div>
         <div>
-          <label htmlFor="language-select" className="text-neutral-100">
-            Select Language:
+          <label
+            htmlFor="language-select"
+            className="text-neutral-50 mb-2"
+          >
+            {t('header.missingCountryFlag')}
+          </label>
+          <a
+            className="text-neutral-50 mr-10 mb-2"
+            href="https://chromewebstore.google.com/detail/country-flag-fixer/jhcpefjbhmbkgjgipkhndplfbhdecijh"
+          >
+            {t('header.href')}
+          </a>
+          <label
+            htmlFor="language-select"
+            className="text-neutral-100"
+          >
+            {t('header.selectLanguage.label')}
           </label>
           <select
             id="language-select"
             value={router.locale}
             onChange={(e) => handleLanguageChange(e.target.value)}
             className="ml-2 rounded-md bg-neutral-800 py-1 px-2 text-neutral-100"
+            style={{
+              paddingRight: '2rem', // Increase the right padding to make space for the arrow
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'right 0.5rem center', // Adjust the position of the arrow icon
+              appearance: 'none', // Remove the default arrow
+            }}
           >
             <option value="en">{t('header.selectLanguage.english')}</option>
-            <option value="jp">{t('header.selectLanguage.japanese')}</option>
+            <option value="jp">{t('header.selectLanguage.japanese')} </option>
           </select>
         </div>
       </nav>
@@ -158,16 +180,22 @@ const MobileNav: FC<{
               </nav>
               <div className="mt-4 px-2">
                 <label htmlFor="language-select" className="text-neutral-100">
-                  Select Language:
+                  {t('header.selectLanguage.label')}
                 </label>
                 <select
                   id="language-select"
                   value={router.locale}
                   onChange={(e) => handleLanguageChange(e.target.value)}
                   className="ml-2 rounded-md bg-neutral-800 py-1 px-2 text-neutral-100"
+                  style={{
+                    paddingRight: '2rem', // Increase the right padding to make space for the arrow
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 0.5rem center', // Adjust the position of the arrow icon
+                    appearance: 'none', // Remove the default arrow
+                  }}
                 >
                   <option value="en">{t('header.selectLanguage.english')}</option>
-                  <option value="jp">{t('header.selectLanguage.japanese')}</option>
+                  <option value="jp">{t('header.selectLanguage.japanese')} </option>
                 </select>
               </div>
             </div>

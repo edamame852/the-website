@@ -1,12 +1,54 @@
 {
     "hello": "Hello in English",
+    "hero": {
+        "name": "My Name is Milton Chow",
+        "description": {
+            "entry1": "I'm Milton Chow, a ",
+            "entry2": "Full Stack Developer",
+            "entry3": ", currently working at ",
+            "entry4": "Société Générale ",
+            "entry5": "as a front office automation developer helping to build internal web applications, python solutions, and automative CICD pipelines.",
+            "entry6": "In my free time time, you can catch me studying ",
+            "entry7": "Japanese ",
+            "entry8": ", or ",
+            "entry9": "snowboarding",
+            "entry10": ", or scuba diving in",
+            "entry11": "Japan or Taiwan"
+        }
+    },
+    "header": {
+        "missingCountryFlag": "If the country flag emoji doesn't show up, install the plugin : ",
+        "href": "Click Me",
+        "selectLanguage": {
+            "label": "Select Language:",
+            "english": "English 🇺🇸",
+            "japanese": "Japanese 🇯🇵"
+        }
+    },
     "section": {
         "about": "about"
     },
     "about": {
+        "aboutMe": "About me",
         "description": "I have around 3 years of experience being a software developer and I'm seeking for oppotorunities on being a full stack developer/ dev ops. Currently I'm most comfortable with developing software in Python",
         "aboutItems": {
-            "location": "Hell Kong"
+            "text": {
+                "location": "Hong Kong SAR",
+                "nationality": "Hong Kong, Taiwan",
+                "interests": "Snowboarding, Diving, Coding",
+                "undergrad": "Texas A&M University",
+                "masters": "HKUST",
+                "employment": "Société Générale Group"
+            },
+            "label": {
+                "location": "location",
+                "age": "age",
+                "nationality": "nationality",
+                "interests": "interests",
+                "undergrad": "BSc. undergrad",
+                "masters": "MSc. masters",
+                "employment": "employment"
+            }
         }
     }
 }
