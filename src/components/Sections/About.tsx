@@ -4,9 +4,31 @@ import {FC, memo} from 'react';
 
 import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
+import { useTranslation } from 'next-i18next';
+
+import {
+  AcademicCapIcon,
+  // ArrowDownTrayIcon,
+  BuildingOffice2Icon,
+  CalendarIcon,
+  FlagIcon,
+  MapIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline';
 
 const About: FC = memo(() => {
-  const {profileImageSrc, description, aboutItems} = aboutData;
+  const {profileImageSrc} = aboutData; // refactoring description and aboutItems
+  const {t}=useTranslation();
+  const description =  t('about.description');
+  const aboutItems = [
+    {label: t('about.aboutItems.label.location'), text: t('about.aboutItems.text.location'), Icon: MapIcon},
+    {label: t('about.aboutItems.label.age'), text: '26', Icon: CalendarIcon},
+    {label: t('about.aboutItems.label.nationality'), text: t('about.aboutItems.text.nationality'), Icon: FlagIcon},
+    {label: t('about.aboutItems.label.interests'), text: t('about.aboutItems.text.interests'), Icon: SparklesIcon},
+    {label: t('about.aboutItems.label.undergrad'), text: t('about.aboutItems.text.undergrad'), Icon: AcademicCapIcon},
+    {label: t('about.aboutItems.label.masters'), text: t('about.aboutItems.text.masters'), Icon: AcademicCapIcon},
+    {label: t('about.aboutItems.label.employment'), text: t('about.aboutItems.text.employment'), Icon: BuildingOffice2Icon},
+  ]
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.About}>
       <div className={classNames('grid grid-cols-1 gap-y-4', {'md:grid-cols-4': !!profileImageSrc})}>
@@ -19,7 +41,7 @@ const About: FC = memo(() => {
         )}
         <div className={classNames('col-span-1 flex flex-col gap-y-6', {'md:col-span-3': !!profileImageSrc})}>
           <div className="flex flex-col gap-y-2">
-            <h2 className="text-2xl font-bold text-white">About me</h2>
+            <h2 className="text-2xl font-bold text-white">{t('about.aboutMe')}</h2>
             <p className="prose prose-sm text-gray-300 sm:prose-base">{description}</p>
           </div>
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">

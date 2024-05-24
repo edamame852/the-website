@@ -1,28 +1,32 @@
 # React JS Resume Website Template
 
-![ReactJS Resume Website Template](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')
+<!-- ### cool badges: https://dev.to/envoy_/150-badges-for-github-pnk -->
+
+![ReactJS Resume Website Template ](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')
 
 <div align="center">
-
-<img alt="GitHub release (latest by date including pre-releases" src="https://img.shields.io/github/v/release/tbakerx/react-resume-template?include_prereleases">
-
-<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/tbakerx/react-resume-template?style=flat">
-
-<img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/tbakerx/react-resume-template?style=flat&color=success">
-
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/tbakerx/react-resume-template?style=flat&color=yellow">
-
+<img alt="Github action deployment badge" src="https://github.com/edamame852/the-website/actions/workflows/nextjs.yml/badge.svg">
 <img alt="GitHub package.json dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/tbakerx/react-resume-template/react?style=flat">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/tbakerx/react-resume-template?style=flat">
+<br/>
+<img alt="Linux Distro" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
+<img alt="typescript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+<img alt="javascript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+<img alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+<img alt="vscode" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+<img alt="stylelint" src="https://img.shields.io/badge/stylelint-000?style=for-the-badge&logo=stylelint&logoColor=white">
 
-<img alt="Github Repo Sponsors" src="https://img.shields.io/github/sponsors/tbakerx?style=flat&color=blueviolet">
+<br/>
 
-## React based template for software developer-focused resume websites
+
+### Note: This website is built from a React based template into a resume website
 
 </div>
 
-### View a [live demo here.](https://reactresume.com)
+### How to build?
+`npm run dev` on same level as package.json
 
-#### If this template has helped you and you'd like to support my work, feel free to [♥️ Sponsor](https://github.com/sponsors/tbakerx) the project
+### View a [live demo here.](https://reactresume.com)
 
 ### 🎉 Version 2 is here! New features:
 1. Completely rebuilt with React and full typescript support

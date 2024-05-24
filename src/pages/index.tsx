@@ -10,24 +10,45 @@ import Portfolio from '../components/Sections/Portfolio';
 import Resume from '../components/Sections/Resume';
 import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/data';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
 
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
 
+// Credit for this i18n implementation goes to https://www.youtube.com/watch?v=6xLYSyXmR3U
+
 const Home: FC = memo(() => {
+  const router = useRouter();
+  const handleChange = (locale:string) => {
+    router.push(router.pathname, router.asPath, {locale})
+  }
   const {title, description} = homePageMeta;
   return (
-    <Page description={description} title={title}>
-      <Header />
-      <Hero />
-      <About />
-      <Resume />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </Page>
+  <>
+      
+      <Page description={description} title={title}>
+        <Header router={router} handleLanguageChange={handleChange}/>
+        <Hero />
+        <About />
+        <Resume />
+        <Portfolio />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </Page>
+    </>
+    
   );
 });
 
 export default Home;
+
+export async function getStaticProps(context:any){
+  const {locale} = context;
+  return {
+    props: {
+      ...(await serverSideTranslations (locale))
+    } 
+  }
+}
