@@ -1,33 +1,40 @@
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Image from 'next/image';
+import {useTranslation} from 'next-i18next';
 import {FC, memo} from 'react';
 
 import {heroData, SectionId} from '../../data/data';
+import heroImage from '../../images/header-background.webp';
 import Section from '../Layout/Section';
 import Socials from '../Socials';
-import heroImage from '../../images/header-background.webp';
-import { useTranslation } from 'next-i18next';
 
 const Hero: FC = memo(() => {
-  const {t}=useTranslation();
+  const {t} = useTranslation();
   const {actions} = heroData;
   const imageSrc = heroImage;
-  const name= t('hero.name');
+  const name = t('hero.name');
   const description = (
     <>
-      <p/>
+      <p />
       <p className="text-stone-200 sm:text-base lg:text-xl">
-      {t('hero.description.entry1')}<strong className="text-stone-50 underline">{t('hero.description.entry2')}</strong>{t('hero.description.entry3')}<strong className="text-stone-100">{t('hero.description.entry4')}</strong>{t('hero.description.entry5')}
+        {t('hero.description.entry1')}
+        <strong className="text-stone-50 underline">{t('hero.description.entry2')}</strong>
+        {t('hero.description.entry3')}
+        <strong className="text-stone-100">{t('hero.description.entry4')}</strong>
+        {t('hero.description.entry5')}
       </p>
       {/* <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg"> */}
       <p className="text-stone-200 sm:text-base lg:text-lg">
-      {t('hero.description.entry6')}<strong className="text-stone-100">{t('hero.description.entry7')}</strong>{t('hero.description.entry8')}<strong className="text-stone-100">{t('hero.description.entry9')}</strong>{t('hero.description.entry10')}{' '}
-        <strong className="text-stone-100">{t('hero.description.entry11')}</strong>.
+        {t('hero.description.entry6')}
+        <strong className="text-stone-100">{t('hero.description.entry7')}</strong>
+        {t('hero.description.entry8')}
+        <strong className="text-stone-100">{t('hero.description.entry9')}</strong>
+        {t('hero.description.entry10')} <strong className="text-stone-100">{t('hero.description.entry11')}</strong>.
       </p>
     </>
   );
-  
+
   return (
     <Section noPadding sectionId={SectionId.Hero}>
       <div className="relative flex h-screen w-full items-center justify-center">
