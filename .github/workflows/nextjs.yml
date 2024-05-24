@@ -8,7 +8,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
+  # pull_request: ["*"]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -27,7 +27,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    if: contains(github.event.head_commit.message, 'build2github')
+    # if: contains(github.event.head_commit.message, 'build2github')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
