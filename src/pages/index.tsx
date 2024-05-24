@@ -21,9 +21,12 @@ const Header = dynamic(() => import('../components/Sections/Header'), {ssr: fals
 
 const Home: FC = memo(() => {
   const router = useRouter();
-  const handleChange = React.useCallback((locale: string) => {
-    router.push(router.pathname, router.asPath, {locale});
-  }, [router]);
+  const handleChange = React.useCallback(
+    (locale: string) => {
+      router.push(router.pathname, router.asPath, {locale});
+    },
+    [router],
+  );
   const {title, description} = homePageMeta;
   return (
     <>
