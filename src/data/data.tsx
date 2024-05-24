@@ -54,7 +54,7 @@ export const homePageMeta: HomepageMeta = {
  */
 export const SectionId = {
   Hero: 'hero',
-  About: "about",
+  About: 'about',
   Contact: 'contact',
   Portfolio: 'portfolio',
   Resume: 'resume',
@@ -75,11 +75,12 @@ export const heroData: Hero = {
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         Hi I'm Milton Chow <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Société Générale</strong> as a front office automation developer helping to build internal web applications, python solutions, and automative CICD pipelines.
+        at <strong className="text-stone-100">Société Générale</strong> as a front office automation developer helping
+        to build internal web applications, python solutions, and automative CICD pipelines.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me studying <strong className="text-stone-100">Japanese</strong>,
-        or <strong className="text-stone-100">snowboarding</strong>, or scuba diving in{' '}
+        In my free time time, you can catch me studying <strong className="text-stone-100">Japanese</strong>, or{' '}
+        <strong className="text-stone-100">snowboarding</strong>, or scuba diving in{' '}
         <strong className="text-stone-100"> Japan or Taiwan</strong>.
       </p>
     </>
@@ -270,7 +271,9 @@ export const education: TimelineItem[] = [
     date: 'Dec 2023',
     location: 'HKUST',
     title: 'Masters Financial Mathematics',
-    content: <p>Focus on proofing and implmenting quantative mathematics in theory and software development respectively</p>,
+    content: (
+      <p>Focus on proofing and implmenting quantative mathematics in theory and software development respectively</p>
+    ),
   },
   {
     date: 'June 2020',
@@ -369,5 +372,5 @@ export const socialLinks: Social[] = [
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/milton-chow-8103b4171/'},
   {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/miller_cyc/'},
   // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
-  {label: 'Youtube', Icon: YoutubeIcon, href:'https://www.youtube.com/@Taking_You_To'}
+  {label: 'Youtube', Icon: YoutubeIcon, href: 'https://www.youtube.com/@Taking_You_To'},
 ];

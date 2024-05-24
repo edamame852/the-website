@@ -1,14 +1,13 @@
-import React from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-import { Bars3BottomRightIcon } from '@heroicons/react/24/outline';
+import {Dialog, Transition} from '@headlessui/react';
+import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { FC, Fragment, memo, useCallback, useMemo, useState } from 'react';
-import { NextRouter } from 'next/router';
+import {NextRouter} from 'next/router';
+import React, {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
+import {useTranslation} from 'react-i18next';
 
-import { SectionId } from '../../data/data';
-import { useNavObserver } from '../../hooks/useNavObserver';
-import { useTranslation } from 'react-i18next';
+import {SectionId} from '../../data/data';
+import {useNavObserver} from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';
 
@@ -17,14 +16,14 @@ interface HeaderProps {
   handleLanguageChange: (locale: string) => void;
 }
 
-const Header: FC<HeaderProps> = memo(({ router, handleLanguageChange }) => {
+const Header: FC<HeaderProps> = memo(({router, handleLanguageChange}) => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
   const navSections = useMemo(
     () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
     [],
   );
 
-  const {t}=useTranslation();
+  const {t} = useTranslation();
   const intersectionHandler = useCallback((section: SectionId | null) => {
     section && setCurrentSection(section);
   }, []);
@@ -35,17 +34,17 @@ const Header: FC<HeaderProps> = memo(({ router, handleLanguageChange }) => {
     <>
       <MobileNav
         currentSection={currentSection}
-        navSections={navSections}
         handleLanguageChange={handleLanguageChange}
+        navSections={navSections}
         router={router}
-        t= {t}
+        t={t}
       />
       <DesktopNav
         currentSection={currentSection}
-        navSections={navSections}
         handleLanguageChange={handleLanguageChange}
+        navSections={navSections}
         router={router}
-        t = {t}
+        t={t}
       />
     </>
   );
@@ -57,7 +56,7 @@ const DesktopNav: FC<{
   handleLanguageChange: (locale: string) => void;
   router: NextRouter;
   t: (key: string) => string;
-}> = memo(({ navSections, currentSection, handleLanguageChange, router,t }) => {
+}> = memo(({navSections, currentSection, handleLanguageChange, router, t}) => {
   const baseClass =
     '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 sm:hover:text-orange-500 text-neutral-100';
   const activeClass = classNames(baseClass, 'text-orange-500');
@@ -77,36 +76,28 @@ const DesktopNav: FC<{
           ))}
         </div>
         <div>
-          <label
-            htmlFor="language-select"
-            className="text-neutral-50 mb-2"
-          >
+          <label className="text-neutral-50 mb-2" htmlFor="language-select">
             {t('header.missingCountryFlag')}
           </label>
           <a
             className="text-neutral-50 mr-10 mb-2"
-            href="https://chromewebstore.google.com/detail/country-flag-fixer/jhcpefjbhmbkgjgipkhndplfbhdecijh"
-          >
+            href="https://chromewebstore.google.com/detail/country-flag-fixer/jhcpefjbhmbkgjgipkhndplfbhdecijh">
             {t('header.href')}
           </a>
-          <label
-            htmlFor="language-select"
-            className="text-neutral-100"
-          >
+          <label className="text-neutral-100" htmlFor="language-select">
             {t('header.selectLanguage.label')}
           </label>
           <select
-            id="language-select"
-            value={router.locale}
-            onChange={(e) => handleLanguageChange(e.target.value)}
             className="ml-2 rounded-md bg-neutral-800 py-1 px-2 text-neutral-100"
+            id="language-select"
+            onChange={e => handleLanguageChange(e.target.value)}
             style={{
               paddingRight: '2rem', // Increase the right padding to make space for the arrow
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'right 0.5rem center', // Adjust the position of the arrow icon
               appearance: 'none', // Remove the default arrow
             }}
-          >
+            value={router.locale}>
             <option value="en">{t('header.selectLanguage.english')}</option>
             <option value="jp">{t('header.selectLanguage.japanese')} </option>
           </select>
@@ -122,7 +113,7 @@ const MobileNav: FC<{
   handleLanguageChange: (locale: string) => void;
   router: NextRouter;
   t: (key: string) => string;
-}> = memo(({ navSections, currentSection, handleLanguageChange, router,t }) => {
+}> = memo(({navSections, currentSection, handleLanguageChange, router, t}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleOpen = useCallback(() => {
@@ -138,8 +129,7 @@ const MobileNav: FC<{
       <button
         aria-label="Menu Button"
         className="fixed right-2 top-2 z-40 rounded-md bg-orange-500 p-2 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
-        onClick={toggleOpen}
-      >
+        onClick={toggleOpen}>
         <Bars3BottomRightIcon className="h-8 w-8 text-white" />
         <span className="sr-only">Open sidebar</span>
       </button>
@@ -152,8 +142,7 @@ const MobileNav: FC<{
             enterTo="opacity-100"
             leave="transition-opacity ease-linear duration-300"
             leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
+            leaveTo="opacity-0">
             <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" />
           </Transition.Child>
           <Transition.Child
@@ -163,8 +152,7 @@ const MobileNav: FC<{
             enterTo="translate-x-0"
             leave="transition ease-in-out duration-300 transform"
             leaveFrom="translate-x-0"
-            leaveTo="-translate-x-full"
-          >
+            leaveTo="-translate-x-full">
             <div className="relative w-4/5 bg-stone-800">
               <nav className="mt-5 flex flex-col gap-y-2 px-2">
                 {navSections.map(section => (
@@ -179,21 +167,20 @@ const MobileNav: FC<{
                 ))}
               </nav>
               <div className="mt-4 px-2">
-                <label htmlFor="language-select" className="text-neutral-100">
+                <label className="text-neutral-100" htmlFor="language-select">
                   {t('header.selectLanguage.label')}
                 </label>
                 <select
-                  id="language-select"
-                  value={router.locale}
-                  onChange={(e) => handleLanguageChange(e.target.value)}
                   className="ml-2 rounded-md bg-neutral-800 py-1 px-2 text-neutral-100"
+                  id="language-select"
+                  onChange={e => handleLanguageChange(e.target.value)}
                   style={{
                     paddingRight: '2rem', // Increase the right padding to make space for the arrow
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'right 0.5rem center', // Adjust the position of the arrow icon
                     appearance: 'none', // Remove the default arrow
                   }}
-                >
+                  value={router.locale}>
                   <option value="en">{t('header.selectLanguage.english')}</option>
                   <option value="jp">{t('header.selectLanguage.japanese')} </option>
                 </select>
@@ -212,14 +199,13 @@ const NavItem: FC<{
   activeClass: string;
   inactiveClass: string;
   onClick?: () => void;
-}> = memo(({ section, current, inactiveClass, activeClass, onClick }) => {
+}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
   return (
     <Link
       className={classNames(current ? activeClass : inactiveClass)}
       href={`/#${section}`}
       key={section}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {section}
     </Link>
   );

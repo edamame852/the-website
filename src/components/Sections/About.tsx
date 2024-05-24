@@ -1,11 +1,3 @@
-import classNames from 'classnames';
-import Image from 'next/image';
-import {FC, memo} from 'react';
-
-import {aboutData, SectionId} from '../../data/data';
-import Section from '../Layout/Section';
-import { useTranslation } from 'next-i18next';
-
 import {
   AcademicCapIcon,
   // ArrowDownTrayIcon,
@@ -15,11 +7,18 @@ import {
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
+import classNames from 'classnames';
+import Image from 'next/image';
+import {useTranslation} from 'next-i18next';
+import {FC, memo} from 'react';
+
+import {aboutData, SectionId} from '../../data/data';
+import Section from '../Layout/Section';
 
 const About: FC = memo(() => {
   const {profileImageSrc} = aboutData; // refactoring description and aboutItems
-  const {t}=useTranslation();
-  const description =  t('about.description');
+  const {t} = useTranslation();
+  const description = t('about.description');
   const aboutItems = [
     {label: t('about.aboutItems.label.location'), text: t('about.aboutItems.text.location'), Icon: MapIcon},
     {label: t('about.aboutItems.label.age'), text: '26', Icon: CalendarIcon},
@@ -27,8 +26,12 @@ const About: FC = memo(() => {
     {label: t('about.aboutItems.label.interests'), text: t('about.aboutItems.text.interests'), Icon: SparklesIcon},
     {label: t('about.aboutItems.label.undergrad'), text: t('about.aboutItems.text.undergrad'), Icon: AcademicCapIcon},
     {label: t('about.aboutItems.label.masters'), text: t('about.aboutItems.text.masters'), Icon: AcademicCapIcon},
-    {label: t('about.aboutItems.label.employment'), text: t('about.aboutItems.text.employment'), Icon: BuildingOffice2Icon},
-  ]
+    {
+      label: t('about.aboutItems.label.employment'),
+      text: t('about.aboutItems.text.employment'),
+      Icon: BuildingOffice2Icon,
+    },
+  ];
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.About}>
       <div className={classNames('grid grid-cols-1 gap-y-4', {'md:grid-cols-4': !!profileImageSrc})}>
